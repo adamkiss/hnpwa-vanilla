@@ -2,6 +2,12 @@
 publish = "public"
 command = "npm run build-prod"
 
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
+
 [[headers]]
 for = "/sw.js"
 [headers.values]
