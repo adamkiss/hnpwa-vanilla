@@ -1,3 +1,15 @@
 [build]
-	publish = "public"
-	command = "yarn build-prod"
+publish = "public"
+command = "npm run build-prod"
+
+[[headers]]
+for = "/sw.js"
+[headers.values]
+Cache-Control = "max-age=0, no-cache, no-store, must-revalidate"
+
+[[headers]]
+for = "/"
+[headers.values]
+Link = '''
+</bundle.js> rel=preload as=script, \
+<https://hnpwa.com/api/v0/news.json?page=1> rel=preload as=fetch crossorigin'''
